@@ -1,0 +1,1 @@
+# retailautomation-scratch
