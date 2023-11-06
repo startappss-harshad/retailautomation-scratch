@@ -9,7 +9,8 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-
+import Grid from '@mui/material/Grid';
+import Box from "@mui/material/Box";
 const columns = [
   { id: 'name', label: 'Product Name', minWidth: 170 },
   { id: 'code', label: 'Order Number', minWidth: 100 },
@@ -17,10 +18,19 @@ const columns = [
 ];
 
 const dummyData = [
-  { name: 'Product A', code: 'A123', date: '2023-10-01' },
-  { name: 'Product B', code: 'B456', date: '2023-10-02' },
-  { name: 'Product C', code: 'C789', date: '2023-10-03' },
-  // Add more dummy data as needed
+  { name: 'Oil', code: 'A123', date: '2023-10-01' },
+  { name: 'tshirt', code: 'B456', date: '2023-10-02' },
+  { name: 'tshirt', code: 'C789', date: '2023-10-03' },
+  { name: 'tshirt', code: 'A123', date: '2023-10-04' },
+  { name: 'tshirt', code: 'B456', date: '2023-10-05' },
+  { name: 'tshirt', code: 'C789', date: '2023-10-06' },
+  { name: 'tshirt', code: 'A123', date: '2023-10-07' },
+  { name: 'tshirt', code: 'B456', date: '2023-10-08' },
+  { name: 'tshirt', code: 'C789', date: '2023-10-09' },
+  { name: 'tshirt', code: 'A123', date: '2023-10-10' },
+  { name: 'tshirt', code: 'B456', date: '2023-10-11' },
+  { name: 'tshirt', code: 'C789', date: '2023-10-12' },
+  
 ];
 
 const Ordersummery = () => {
@@ -45,7 +55,7 @@ const Ordersummery = () => {
   };
 
   const applyFilters = () => {
-    // Apply filtering based on start date, end date, and search text
+
     const filtered = rows.filter((row) => {
       const startDatePass = startDate ? new Date(row.date) >= new Date(startDate) : true;
       const endDatePass = endDate ? new Date(row.date) <= new Date(endDate) : true;
@@ -56,7 +66,7 @@ const Ordersummery = () => {
       return startDatePass && endDatePass && searchTextPass;
     });
     setFilteredData(filtered);
-    setPage(0); // Reset pagination when filtering
+    setPage(0); 
   };
 
   const handleChangePage = (event, newPage) => {
@@ -69,89 +79,101 @@ const Ordersummery = () => {
   };
 
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-      <div>
-        <TextField
-          label="Start Date"
-          type="date"
-          value={startDate}
-          onChange={handleStartDateChange}
-          InputLabelProps={{
-            shrink: true,
+    <Paper sx={{ width: '100%', overflow: 'hidden', marginTop: "50px" }}>
+        <div>
+        <Box
+          component="form"
+          sx={{
+            "& > :not(style)": { m: 1, width: "25ch" },
           }}
-        />
-        <TextField
-          label="End Date"
-          type="date"
-          value={endDate}
-          onChange={handleEndDateChange}
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-        <TextField
-          label="Search"
-          value={searchText}
-          onChange={handleSearchTextChange}
-        />
-        <Button variant="contained" color="primary" onClick={applyFilters}>
-          Apply Filters
-        </Button>
-      </div>
-      <TableContainer sx={{ maxHeight: 440 }}>
-        <Table stickyHeader aria-label="sticky table">
-          <TableHead>
-            <TableRow>
-              {columns.map((column) => (
-                <TableCell
-                  key={column.id}
-                  style={{ minWidth: column.minWidth }}
-                >
-                  {column.label}
-                </TableCell>
-              ))}
-              <TableCell key="actions">Actions</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {filteredData
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => {
-                return (
-                  <TableRow key={row.code}>
-                    {columns.map((column) => {
-                      const value = row[column.id];
-                      return (
-                        <TableCell key={column.id}>{value}</TableCell>
-                      );
-                    })}
-                    <TableCell>
-                      <Button
-                        variant="outlined"
-                        onClick={() => {
-                          // Handle the action to view the details of the product here
-                          console.log(`View details of ${row.name}`);
-                        }}
-                      >
-                        View Details
-                      </Button>
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={filteredData.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
-    </Paper>
+          noValidate
+          autoComplete="off"
+        >
+          <TextField
+            id="outlined-basic"
+            variant="outlined"
+            label="Start Date"
+            type="date"
+            value={startDate}
+            onChange={handleStartDateChange}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+          <TextField
+            id="outlined-basic"
+            variant="outlined"
+            label="End Date"
+            type="date"
+            value={endDate}
+            onChange={handleEndDateChange}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+          <TextField
+            label="Search"
+            value={searchText}
+            onChange={handleSearchTextChange}
+          />
+          <Button variant="contained" color="primary" onClick={applyFilters}>
+            Apply Filters
+          </Button>
+        </Box>
+        </div>
+       
+
+    <TableContainer>
+      <Table stickyHeader aria-label="sticky table">
+        <TableHead>
+          <TableRow>
+            {columns.map((column) => (
+              <TableCell key={column.id} style={{ minWidth: column.minWidth }}>
+                {column.label}
+              </TableCell>
+            ))}
+            <TableCell key="actions">Actions</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {filteredData
+            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            .map((row) => {
+              return (
+                <TableRow key={row.code}>
+                  {columns.map((column) => {
+                    const value = row[column.id];
+                    return (
+                      <TableCell key={column.id}>{value}</TableCell>
+                    );
+                  })}
+                  <TableCell>
+                    <Button
+                      variant="outlined"
+                      onClick={() => {
+                        // Handle the action to view the details of the product here
+                        console.log(`View details of ${row.name}`);
+                      }}
+                    >
+                      View Details
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              );
+            })}
+        </TableBody>
+      </Table>
+    </TableContainer>
+    <TablePagination
+      rowsPerPageOptions={[10, 25, 100]}
+      component="div"
+      count={filteredData.length}
+      rowsPerPage={rowsPerPage}
+      page={page}
+      onPageChange={handleChangePage}
+      onRowsPerPageChange={handleChangeRowsPerPage}
+    />
+  </Paper>
   );
 };
 
