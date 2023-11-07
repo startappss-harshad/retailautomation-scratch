@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.datetag{
+  font-weight: 600;
+  font-size: 27px;
+}
+.datepage{
+  text-align: center;
+}
+.datepage Button{
+  margin: 10px;
+}
