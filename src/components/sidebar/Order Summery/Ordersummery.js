@@ -288,12 +288,12 @@ const Ordersummery = () => {
               {columns.map((column) => (
                 <TableCell
                   key={column.id}
-                  style={{ minWidth: column.minWidth ,backgroundColor: "black",color: "white",}}
+                  style={{ minWidth: column.minWidth ,backgroundColor: "#304146",color: "white",}}
                 >
                   {column.label}
                 </TableCell>
               ))}
-              <TableCell key="actions" style={{backgroundColor: "black",color: "white",}}>Actions</TableCell>
+              <TableCell key="actions" style={{backgroundColor: "#304146",color: "white",}}>Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
