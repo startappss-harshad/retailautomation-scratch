@@ -1,15 +1,24 @@
 import './App.css';
-// import Ordersummery from './components/sidebar/Order Summery/Ordersummery';
-import ButtonAppBar from './components/sidebar/Order Summery/navbar';
+// import Ordersummery from './components/Order Summery/Ordersummery';
+ import Navbar from './components/Order Summery/navbar';
+import AddUserCard from './components/User Management/Addusercardard';
+
+
 
 function App() {
   return (
+    
     <div className="App">
-      {/* <Sidebar/> */}
+      
       {/* <Ordersummery/> */}
-      <ButtonAppBar/>
+      {/* <Navbar/> */}
+      <AddUserCard/>
+      
+   
     </div>
   );
 }
 
 export default App;
+
+
