@@ -9,6 +9,7 @@ const LoginStyle = styled.div`
     .form-error{
         color:${({ theme }) => theme.Colors.red};
         font-size: ${({ theme }) => theme.font.fontSizeInput};
+        gap:"2px"
         
         
     };

@@ -5,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -144,6 +144,7 @@ const resetForm = ()=>{
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
+            
               <div className='form-error'>{errors.password && touched.password ? (<p >{errors.password}</p>) : null}</div>
 
               <FormControlLabel sx={{ display: "flex" }}
@@ -166,22 +167,10 @@ const resetForm = ()=>{
                    
                 </NavLink>
                 </Grid>
-                {/* <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid> */}
+             
+             
               </Grid>
-              <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 5 }}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-              {/* <Copyright sx={{ mt: 5 }} /> */}
-              {/* </form> */}
+            
             </Box>
           </Box>
         </Grid>
