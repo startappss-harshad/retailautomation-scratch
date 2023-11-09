@@ -24,13 +24,13 @@ const dummyData = [
   {
     product_name: "Laptop",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUQ_uvUglkJX1pkypZf1c6A1zGbSrWU8qs9HX-zyfJ&s",
-    price: 799.99,
+    price: 79999,
     tax: 5,
     date: "2023-10-01",
   },
   {
     product_name: "Smartphone",
-    price: 499.99,
+    price: 49999,
 
     tax: 3,
     date: "2023-10-02",
@@ -38,7 +38,7 @@ const dummyData = [
 
   {
     product_name: "Television",
-    price: 699.99,
+    price: 7000,
 
     tax: 7,
     date: "2023-10-03",
@@ -52,7 +52,7 @@ const dummyData = [
   },
   {
     product_name: "Coffee Maker",
-    price: 49.99,
+    price: 4999,
 
     tax: 2.5,
     date: "2023-10-05",
@@ -66,28 +66,28 @@ const dummyData = [
   },
   {
     product_name: "Refrigerator",
-    price: 899.99,
+    price: 18999.0,
 
     tax: 8,
     date: "2023-10-06",
   },
   {
     product_name: "Digital Camera",
-    price: 249.99,
+    price: 25000,
 
     tax: 4,
     date: "2023-10-07",
   },
   {
     product_name: "Fitness Tracker",
-    price: 79.99,
+    price: 900,
 
     tax: 2,
     date: "2023-10-08",
   },
   {
     product_name: "Microwave Oven",
-    price: 149.99,
+    price: 14999,
 
     tax: 4.5,
     date: "2023-10-09",
