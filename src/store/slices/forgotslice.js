@@ -7,15 +7,15 @@ export const loginData = createAsyncThunk('login', async(data, {rejectwithvalue}
 })
 
 
-const loginSlice = createSlice({
+const forgotslice = createSlice({
     name: 'login',
     initialState:{
         loading:false,
-        data:[{email:""}],
+        data:[{email:"",password:""}],
         error:false
     },
     reducers:{
-        loginformdata(state,action){
+        forgotformdata(state,action){
             console.log('from reducer', action.payload)
             state.data.push(action.payload)
         }
@@ -37,5 +37,5 @@ const loginSlice = createSlice({
         })
     }
 })
-export const {loginformdata} = loginSlice.actions
-export default loginSlice.reducer;
+export const {forgotformdata} = forgotslice.actions
+export default forgotslice.reducer;

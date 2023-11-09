@@ -16,27 +16,18 @@ import { useFormik } from 'formik/dist';
 import { LoginSchema } from './FormikYup';
 import { loginformdata } from '../../store/slices/loginslice';
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import {data} from './styled';
+ 
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-// TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
-export default function SignInSide() {
+const Login=()=> {
 
   const dispatch = useDispatch()
+  const { LoginStyle } = data
+
   const { values,setValues, handleBlur, touched,setTouched, handleChange, handleSubmit, errors, setErrors} = useFormik({
     initialValues: {
       email: "",
@@ -87,7 +78,8 @@ const resetForm = ()=>{
 
 
 
-  return (
+  return (<LoginStyle>
+  <div className='containers'>
     <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
@@ -121,7 +113,7 @@ const resetForm = ()=>{
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
-            <Box component="form" onSubmit={handleSubmit}  sx={{ mt: 1 }}>
+            <Box component="form" className='forgotemail' onSubmit={handleSubmit}  sx={{ mt: 1 }}>
             {/* <form sx={{ mt: 1}}> */}
               <TextField
                 margin="normal"
@@ -169,9 +161,10 @@ const resetForm = ()=>{
               </Button>
               <Grid container>
                 <Grid item xs sx={{ display: "flex" }}>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
+                <NavLink to="/forgot" variant="body2">
+               Forgot password ??
+                   
+                </NavLink>
                 </Grid>
                 {/* <Grid item>
                   <Link href="#" variant="body2">
@@ -179,12 +172,24 @@ const resetForm = ()=>{
                   </Link>
                 </Grid> */}
               </Grid>
-              <Copyright sx={{ mt: 5 }} />
+              <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 5 }}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+              {/* <Copyright sx={{ mt: 5 }} /> */}
               {/* </form> */}
             </Box>
           </Box>
         </Grid>
       </Grid>
     </ThemeProvider>
+    </div>
+    </LoginStyle>
   );
 }
+
+export default Login

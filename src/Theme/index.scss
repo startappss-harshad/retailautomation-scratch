@@ -1,0 +1,64 @@
+@import "./Theme.scss";
+@import "./font.scss";
+
+ @mixin flexbox ($width){
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: $width;
+}
+
+*{
+    box-sizing:border-box!important ;
+    margin: 0;
+    padding: 0;
+}
+.Header-items{
+    width: 45%;
+    // @media only screen and (max-width: 600px) and (min-width: 350px){
+    //     .Header-items{
+    //         @include flexbox(20px)
+    //     }
+    // }
+}
+
+.logo{
+    @include flexbox(35%);
+    .logoTypography{
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: bold;
+        font-family: SF-Body-font;
+        color: #000000;
+        // @media (min-width: 350px){
+        //     @include flexbox(100%);
+        //     justify-content: first baseline;
+        // }
+    }
+}
+.search_section{
+    @include flexbox(20%);
+    button{
+        color: $headerIconColor;
+    }
+}
+
+.MegaMenu{
+    background: none !important;
+    border: none !important;
+    
+    // .a.p-menuitem-link{
+    //     background-color: transparent;
+    // }
+    // a.p-menuitem-link:hover{
+    //     background-color: transparent !important;
+    //     border-radius: none !important;
+    // }
+    // .p-menuitem{
+    //     border-radius: transperent !important; 
+    // }
+    // .p-menuitem:hover{
+    //     border-radius: transperent !important;
+    // }
+  
+}

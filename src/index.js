@@ -4,12 +4,19 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import store from './store';
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from 'styled-components';
+import { Theme } from "./Theme/Theme";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <BrowserRouter>
   <Provider store={store}>
+  <ThemeProvider theme={Theme}>
     <App />
+    </ThemeProvider>
   </Provider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

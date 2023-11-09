@@ -1,14 +1,19 @@
 import './App.css';
-// import Sidebar from './components/sidebar/Sidebar';
 import  Login  from './components/login/Login';
 import "./App.css"
- 
-function App() {
-  return (
-    <div className="App">
-      {/* <Sidebar/> */}
-      <Login/>
-    </div>
+import { Routes, Route } from "react-router-dom";
+import Forgot from './components/login/Forgot';
+
+
+const App=()=> {
+  return (<div className='App'>
+    <Routes>
+      <Route  path='/' element={<Login />}/>
+      <Route path='/forgot' element={<Forgot/>}/>
+    </Routes>
+    
+  </div>
+                
   );
 }
 

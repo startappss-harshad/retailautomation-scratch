@@ -1,0 +1,45 @@
+.Header-items {
+  width: 45%;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 35%;
+}
+.logo .logoTypography {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: SF-Body-font;
+  color: #000000;
+}
+
+.search_section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%;
+}
+.search_section button {
+  color: #3d3d3d;
+}
+
+.MegaMenu {
+  background: none !important;
+  border: none !important;
+}
+.MegaMenu .a.p-menuitem-link {
+  background-color: transparent;
+}
+.MegaMenu a.p-menuitem-link:hover {
+  background-color: transparent !important;
+  border-radius: none !important;
+}
+.MegaMenu .p-menuitem {
+  border-radius: transperent !important;
+}
+.MegaMenu .p-menuitem:hover {
+  border-radius: transperent !important;
+}/*# sourceMappingURL=index.css.map */
